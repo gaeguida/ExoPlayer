@@ -1702,8 +1702,10 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         case "griffin":
         case "htc_e56ml_dtul":
         case "hwALE-H":
+        case "HWBAH2":
         case "HWBLN-H":
         case "HWCAM-H":
+        case "HWMAR":
         case "HWVNS-H":
         case "HWWAS-H":
         case "i9031":
@@ -1768,6 +1770,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         case "tcl_eu":
         case "V1":
         case "V23GB":
+        case "v3971":
         case "V5":
         case "vernee_M5":
         case "watson":
