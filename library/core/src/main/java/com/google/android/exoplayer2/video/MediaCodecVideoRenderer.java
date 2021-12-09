@@ -1603,18 +1603,20 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
       // https://github.com/google/ExoPlayer/issues/8329.
       switch (Util.DEVICE) {
         case "dangal":
+        case "HWCOL":
         case "dangalUHD":
         case "dangalFHD":
         case "magnolia":
         case "machuca":
         case "once":
         case "oneday":
+          android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround apply workaround return true");
           return true;
         default:
           break; // Do nothing.
       }
     }
-    if (Util.SDK_INT <= 27 && ("HWEML".equals(Util.DEVICE) || "HWCLT".equals(Util.DEVICE))) {
+    if (Util.SDK_INT <= 27 && ("HWEML".equals(Util.DEVICE) || "HWCLT".equals(Util.DEVICE) || "HWCOL".equals(Util.DEVICE))) {
       // Workaround for Huawei P20:
       // https://github.com/google/ExoPlayer/issues/4468#issuecomment-459291645.
       android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround apply workaround return true");
@@ -1747,7 +1749,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
         case "HWCLT":
         case "HWCMR":
         case "HWCMR09":
-        case "HWCOL":
         case "hwG7-L01":
         case "HWHRY-H":
         case "HWHRY-HF":
@@ -1898,7 +1899,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
           break; // Do nothing.
       }
     }
-    android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround don't apply workaround return true");
+    android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround don't apply workaround return false");
     return false;
   }
 
