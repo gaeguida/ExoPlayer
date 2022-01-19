@@ -1594,7 +1594,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
   }
 
   private static boolean evaluateDeviceNeedsSetOutputSurfaceWorkaround() {
-    android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround");
     if (Util.SDK_INT <= 28) {
       // Workaround for MiTV and MiBox devices which have been observed broken up to API 28.
       // https://github.com/google/ExoPlayer/issues/5169,
@@ -1614,10 +1613,9 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
           break; // Do nothing.
       }
     }
-    if (Util.SDK_INT <= 27 && ("HWEML".equals(Util.DEVICE) || "HWCLT".equals(Util.DEVICE))) {
+    if (Util.SDK_INT <= 27 && "HWEML".equals(Util.DEVICE)) {
       // Workaround for Huawei P20:
       // https://github.com/google/ExoPlayer/issues/4468#issuecomment-459291645.
-      android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround apply workaround return true");
       return true;
     }
     if (Util.SDK_INT <= 26) {
@@ -1898,7 +1896,6 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer {
           break; // Do nothing.
       }
     }
-    android.util.Log.d("RTI-check", "evaluateDeviceNeedsSetOutputSurfaceWorkaround don't apply workaround return true");
     return false;
   }
 
