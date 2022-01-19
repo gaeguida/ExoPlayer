@@ -979,6 +979,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         List<MediaCodecInfo> allAvailableCodecInfos =
             getAvailableCodecInfos(mediaCryptoRequiresSecureDecoder);
         availableCodecInfos = new ArrayDeque<>();
+        android.util.Log.d("RTI-check-",
+            "MediaCodecRenderer -->  maybeInitCodecWithFallback with value: "
+                + enableDecoderFallback);
         if (enableDecoderFallback) {
           availableCodecInfos.addAll(allAvailableCodecInfos);
         } else if (!allAvailableCodecInfos.isEmpty()) {

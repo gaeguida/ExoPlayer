@@ -108,6 +108,8 @@ public class DefaultRenderersFactory implements RenderersFactory {
     extensionRendererMode = EXTENSION_RENDERER_MODE_OFF;
     allowedVideoJoiningTimeMs = DEFAULT_ALLOWED_VIDEO_JOINING_TIME_MS;
     mediaCodecSelector = MediaCodecSelector.DEFAULT;
+    android.util.Log.d("RTI-check", "DefaultRenderersFactory constructor called");
+    setEnableDecoderFallback(true);
   }
 
   /**
@@ -208,6 +210,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
    * @return This factory, for convenience.
    */
   public DefaultRenderersFactory setEnableDecoderFallback(boolean enableDecoderFallback) {
+    android.util.Log.d("RTI-check", "DefaultRenderersFactory setEnableDecoderFallback with value: "+enableDecoderFallback);
     this.enableDecoderFallback = enableDecoderFallback;
     return this;
   }
